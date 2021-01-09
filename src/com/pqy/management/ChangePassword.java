@@ -16,8 +16,8 @@ public class ChangePassword {
 	String User;//用户类型 
 	String ID;//ID
 	public void ChangeUI(String Id,String user) {
-		ID=new String(Id);
-		User=new String(user);
+		ID=Id;
+		User=user;
 		f.setSize(250,240);  
 		f.setLocation(700, 450);
 		f.setLayout(null);
@@ -86,7 +86,4 @@ public class ChangePassword {
 		
 	}
 	
-	/*public static void main(String[] args) {
-		new ChangePassword().ChangeUI("m100","Manager");
-	}*/
 }

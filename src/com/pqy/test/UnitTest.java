@@ -7,8 +7,18 @@ import com.pqy.dao.*;
 
 public class UnitTest {
 	@Test
-	public void unittest() {
-		 new PublishCourse();
+	public void AddTest() {
+		new AddStudent().add();
+	}
+	
+	@Test
+	public void ChangeTest() {
+		new ChangePassword().ChangeUI("m200", "123456");
+	}
+	
+	@Test
+	public void QueryTest() {
+		new QueryStudent().QueryStudentUI();
 	}
 	
 }

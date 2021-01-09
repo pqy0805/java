@@ -26,7 +26,13 @@ public class AddStudent {
 	JButton cancel=new JButton("取消");
 	JPanel panNorth=new JPanel();
 	JPanel panSorth=new JPanel();
-	
+	String user;
+	String password;
+	String name;
+	String Class;
+	String Date;
+	String sex;
+	String pro;
 	public void add() { 
 		frame.setSize(350,300);
 		frame.setLocation(700, 450);
@@ -62,13 +68,13 @@ public class AddStudent {
 	
 	class AddActionListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			String user=txtId.getText();
-			String password=txtPassword.getText();
-			String name=txtName.getText();
-			String Class=txtClass.getText();
-			String Date=txtDate.getText();
-			String sex=txtSex.getText();
-			String pro=txtPro.getText();
+			 user=txtId.getText();
+			 password=txtPassword.getText();
+			 name=txtName.getText();
+			 Class=txtClass.getText();
+			 Date=txtDate.getText();
+			 sex=txtSex.getText();
+			 pro=txtPro.getText();
 			DataBase db=new DataBase();
 			if(!sex.equals("男")&&!sex.equals("女")) {
 				JOptionPane.showMessageDialog(null, "请输入正确性别！","提示",JOptionPane.INFORMATION_MESSAGE);

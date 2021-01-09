@@ -145,11 +145,39 @@ public class QueryUser {
 			Sex=new JLabel(rs1.getString(3));
 			Class=new JLabel(rs1.getString(4)); 
 			
+			frame.setSize(500,350);
+			frame.setLocation(700, 450);
+			frame.setLayout(new BorderLayout());
+			
+			ptable.setLayout(new GridLayout(4,2,15,5));
+		    ptable.add(labId);ptable.add(id);
+		    ptable.add(labName);ptable.add(Name);
+		    ptable.add(labSex);ptable.add(Sex);
+		    ptable.add(labClass);ptable.add(Class);
+		    
+	    	other.add(back);
+
+	    	frame.add(new JPanel(),BorderLayout.NORTH);
+	    	frame.add(ptable,BorderLayout.CENTER);
+	    	frame.add(other,BorderLayout.SOUTH);
+	    	back.addActionListener(new BackListener());
+	    	frame.setVisible(true);
+	    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		    }
 		    
 		    else
 		    {
 		    	JOptionPane.showMessageDialog(null, "没有找到","提示 ",JOptionPane.INFORMATION_MESSAGE);
+		    	f.dispose();
+		    	
+		    	if(num==1) {
+					new TeacherMenu().buildMenu();
+				}
+				else if(num==2) {
+					new StudentMenu().buildMenu();
+				}
+		    	
+		    	
 		    }
 			
 		} catch (SQLException e) {
@@ -158,24 +186,7 @@ public class QueryUser {
 		} 
 		
 		
-		frame.setSize(500,350);
-		frame.setLocation(700, 450);
-		frame.setLayout(new BorderLayout());
 		
-		ptable.setLayout(new GridLayout(4,2,15,5));
-	    ptable.add(labId);ptable.add(id);
-	    ptable.add(labName);ptable.add(Name);
-	    ptable.add(labSex);ptable.add(Sex);
-	    ptable.add(labClass);ptable.add(Class);
-	    
-    	other.add(back);
-
-    	frame.add(new JPanel(),BorderLayout.NORTH);
-    	frame.add(ptable,BorderLayout.CENTER);
-    	frame.add(other,BorderLayout.SOUTH);
-    	back.addActionListener(new BackListener());
-    	frame.setVisible(true);
-    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	
 	}
 	
